@@ -45,6 +45,20 @@
       $('.scroll-to-top').fadeOut();
     }
   });
+
+  // Change sidebar menu on mobile
+  $(window).resize(function() {
+      // This will fire each time the window is resized:
+      if($(window).width() <= 425) {
+        $( "a:contains(Home)" ).html('<i class="fas fa-home"></i>');
+        $( "a:contains(About)" ).html('<i class="fas fa-user"></i>');
+        $( "a:contains(Skills)" ).html('<i class="fas fa-code-branch"></i>');
+        $( "a:contains(Portfolio)" ).html('<i class="fas fa-folder-open"></i>');
+        $( "a:contains(Contact)" ).html('<i class="fas fa-mobile-alt"></i>');
+      } else {
+       
+      }
+  }).resize();
  
   $(document).ready(function() {
 
