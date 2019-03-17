@@ -273,7 +273,9 @@ h6 {
   line-height: 50px;
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-left: 15px;
+  /* padding-left: 15px; */
+  height: 100%;
+  text-align: center;
 }
 
 .sidebar-nav > .sidebar-brand a {
@@ -602,6 +604,10 @@ a:hover, a:focus, a:active {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.navlogo {
+  width: 100px;
 }
 
 @media (min-width: 768px) {
