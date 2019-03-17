@@ -604,6 +604,10 @@ a:hover, a:focus, a:active {
   margin-left: auto;
 }
 
+/* .project-img {
+  height: 370px;
+} */
+
 @media (min-width: 768px) {
   .skill-container {
     max-width: 840px;
