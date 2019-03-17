@@ -28,7 +28,7 @@ body {
   opacity: 0;
 }
 .dim.active {
-  opacity: 0.3;
+  opacity: 0.4;
   z-index: 2;
   transition: all 0.4s ease 0s;
 }
@@ -68,7 +68,7 @@ body.active {
   left: 250px;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
-  overflow: hidden;
+  overflow: hidden !important;
   background: #212529;
 }
 
@@ -296,7 +296,7 @@ h6 {
 }
 
 .menu-toggle {
-  position: fixed;
+  position: fixed !important;
   right: 15px;
   top: 15px;
   width: 50px;
@@ -608,6 +608,55 @@ a:hover, a:focus, a:active {
 
 .navlogo {
   width: 100px;
+}
+
+@media (max-width: 1024px) {
+  body.active {
+    left: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .masthead {
+    height: 100% !important;
+  }
+}
+
+@media (max-width: 550px) {
+  body.active {
+    left: 250px;
+  }
+  #sidebar-wrapper {
+    position: fixed;
+    z-index: 99;
+    left: -500px;
+    /* right: 0; */
+    width: 250px;
+    height: 100%;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    -webkit-transform: translateX(250px);
+    transform: translateX(250px);
+    background: #1D809F;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  #sidebar-wrapper.active {
+    /* right: 250px; */
+    left: -250px;
+    width: 250px;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+  }
 }
 
 @media (min-width: 768px) {
