@@ -2,18 +2,33 @@
   "use strict"; // Start of use strict
 
   // Closes the sidebar menu
-  $(".menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#sidebar-wrapper").toggleClass("active");
-    $("body").toggleClass("active");
-    $(".dim").toggleClass("active");
-    $(".dim-active").toggleClass("active");
-    $(".menu-toggle > .fa-bars, .menu-toggle > .fa-times").toggleClass("fa-bars fa-times");
-    $(this).toggleClass("active");
-  });
+  // $(".menu-toggle").click(function(e) {
+  //   e.preventDefault();
+  //   $("#sidebar-wrapper").toggleClass("active");
+  //   $("body").toggleClass("active");
+  //   $(".dim").toggleClass("active");
+  //   $(".dim-active").toggleClass("active");
+  //   $(".menu-toggle > .fa-bars, .menu-toggle > .fa-times").toggleClass("fa-bars fa-times");
+  //   $(this).toggleClass("active");
+  // });
 
   // Smooth scrolling using jQuery easing
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+    $(".button.js-scroll-trigger").removeClass("active");
+    $(this).addClass("active");
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, "easeInOutExpo");
+        return false;
+      }
+    }
+  });
+
+  $('a.scroll-to-top[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -47,18 +62,18 @@
   });
 
   // Change sidebar menu on mobile
-  $(window).resize(function() {
-      // This will fire each time the window is resized:
-      if($(window).width() <= 425) {
-        $( "a:contains(Home)" ).html('<i class="fas fa-home"></i>');
-        $( "a:contains(About)" ).html('<i class="fas fa-user"></i>');
-        $( "a:contains(Skills)" ).html('<i class="fas fa-code-branch"></i>');
-        $( "a:contains(Portfolio)" ).html('<i class="fas fa-folder-open"></i>');
-        $( "a:contains(Contact)" ).html('<i class="fas fa-mobile-alt"></i>');
-      } else {
+  // $(window).resize(function() {
+  //     // This will fire each time the window is resized:
+  //     if($(window).width() <= 425) {
+  //       $( "a:contains(Home)" ).html('<i class="fas fa-home"></i>');
+  //       $( "a:contains(About)" ).html('<i class="fas fa-user"></i>');
+  //       $( "a:contains(Skills)" ).html('<i class="fas fa-code-branch"></i>');
+  //       $( "a:contains(Portfolio)" ).html('<i class="fas fa-folder-open"></i>');
+  //       $( "a:contains(Contact)" ).html('<i class="fas fa-mobile-alt"></i>');
+  //     } else {
        
-      }
-  }).resize();
+  //     }
+  // }).resize();
  
   $(document).ready(function() {
 
@@ -75,7 +90,7 @@
       margin:25,
       nav:false,
       dots:true,
-      autoplay: true,
+      autoplay: false,
       items:1,
       slideBy: 1,
       autoplaySpeed: 500,
