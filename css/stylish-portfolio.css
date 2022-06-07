@@ -637,6 +637,30 @@ a:hover, a:focus, a:active {
   transition: all 0.1s ease-in-out 0s;
 }
 
+.woocommerce {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.woocommerce i {
+  display: inline;
+}
+
+.woocommerce i.fa-w {
+  font-size: 30px;
+}
+
+.woocommerce i.fa-o {
+  font-size: 25px;
+}
+
+.woocommerce:hover {
+  color: #9b5c8f;
+  font-size: 70px !important;
+  transition: all 0.1s ease-in-out 0s;
+}
+
 .skill-title {
   opacity: 0;
   transition: .5s;
