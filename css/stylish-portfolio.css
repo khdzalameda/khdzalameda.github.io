@@ -631,6 +631,12 @@ a:hover, a:focus, a:active {
   transition: all 0.1s ease-in-out 0s;
 }
 
+.shopify:hover {
+  color: #95bf47;
+  font-size: 70px !important;
+  transition: all 0.1s ease-in-out 0s;
+}
+
 .skill-title {
   opacity: 0;
   transition: .5s;
