@@ -124,6 +124,8 @@ body.active {
   background: #212529 !important;
   position: relative;
   height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 #portfolio {
